@@ -27,6 +27,9 @@
 		AF30E32717374C6A00DF673A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF30E32617374C6A00DF673A /* MobileCoreServices.framework */; };
 		AF30E32E173769D000DF673A /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF30E32B173769D000DF673A /* SignInViewController.m */; };
 		AF30E32F173769D000DF673A /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF30E32D173769D000DF673A /* SignUpViewController.m */; };
+		AF58486B173A3337009F1366 /* AsyncPostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF58486A173A3337009F1366 /* AsyncPostManager.m */; };
+		AF58486F173A334A009F1366 /* AsyncPostManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF58486E173A334A009F1366 /* AsyncPostManagerTests.m */; };
+		AF584874173A3568009F1366 /* PersistenceQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AF584873173A3568009F1366 /* PersistenceQueue.m */; };
 		AFAA44D61737B88800C5A844 /* baas.io.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAA44D51737B88800C5A844 /* baas.io.framework */; };
 		AFAA44E31737B8BE00C5A844 /* REComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAA44D81737B8BE00C5A844 /* REComposeViewController.m */; };
 		AFAA44E41737B8BE00C5A844 /* REComposeSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAA44DA1737B8BE00C5A844 /* REComposeSheetView.m */; };
@@ -75,6 +78,12 @@
 		AF30E32B173769D000DF673A /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInViewController.m; path = Login/SignInViewController.m; sourceTree = "<group>"; };
 		AF30E32C173769D000DF673A /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = Login/SignUpViewController.h; sourceTree = "<group>"; };
 		AF30E32D173769D000DF673A /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = Login/SignUpViewController.m; sourceTree = "<group>"; };
+		AF584869173A3337009F1366 /* AsyncPostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncPostManager.h; path = async/AsyncPostManager.h; sourceTree = "<group>"; };
+		AF58486A173A3337009F1366 /* AsyncPostManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncPostManager.m; path = async/AsyncPostManager.m; sourceTree = "<group>"; };
+		AF58486D173A334A009F1366 /* AsyncPostManagerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncPostManagerTests.h; path = Cocoastory/async/AsyncPostManagerTests.h; sourceTree = SOURCE_ROOT; };
+		AF58486E173A334A009F1366 /* AsyncPostManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncPostManagerTests.m; path = Cocoastory/async/AsyncPostManagerTests.m; sourceTree = SOURCE_ROOT; };
+		AF584872173A3568009F1366 /* PersistenceQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersistenceQueue.h; path = async/PersistenceQueue/PersistenceQueue.h; sourceTree = "<group>"; };
+		AF584873173A3568009F1366 /* PersistenceQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersistenceQueue.m; path = async/PersistenceQueue/PersistenceQueue.m; sourceTree = "<group>"; };
 		AFAA44D51737B88800C5A844 /* baas.io.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = baas.io.framework; path = Library/baas.io.framework; sourceTree = "<group>"; };
 		AFAA44D81737B8BE00C5A844 /* REComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REComposeViewController.m; path = Library/REComposeViewController/REComposeViewController.m; sourceTree = "<group>"; };
 		AFAA44D91737B8BE00C5A844 /* REComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REComposeViewController.h; path = Library/REComposeViewController/REComposeViewController.h; sourceTree = "<group>"; };
@@ -153,6 +162,7 @@
 		AF30E2ED173749E400DF673A /* Cocoastory */ = {
 			isa = PBXGroup;
 			children = (
+				AF584868173A332C009F1366 /* async */,
 				AF30E329173769C100DF673A /* login */,
 				AF30E2F6173749E400DF673A /* AppDelegate.h */,
 				AF30E2F7173749E400DF673A /* AppDelegate.m */,
@@ -181,6 +191,7 @@
 		AF30E311173749E400DF673A /* CocoastoryTests */ = {
 			isa = PBXGroup;
 			children = (
+				AF58486C173A333B009F1366 /* async */,
 				AF30E317173749E400DF673A /* CocoastoryTests.h */,
 				AF30E318173749E400DF673A /* CocoastoryTests.m */,
 				AF30E312173749E400DF673A /* Supporting Files */,
@@ -206,6 +217,34 @@
 				AF30E32D173769D000DF673A /* SignUpViewController.m */,
 			);
 			name = login;
+			sourceTree = "<group>";
+		};
+		AF584868173A332C009F1366 /* async */ = {
+			isa = PBXGroup;
+			children = (
+				AF584871173A351B009F1366 /* PersistenceQueue */,
+				AF584869173A3337009F1366 /* AsyncPostManager.h */,
+				AF58486A173A3337009F1366 /* AsyncPostManager.m */,
+			);
+			name = async;
+			sourceTree = "<group>";
+		};
+		AF58486C173A333B009F1366 /* async */ = {
+			isa = PBXGroup;
+			children = (
+				AF58486D173A334A009F1366 /* AsyncPostManagerTests.h */,
+				AF58486E173A334A009F1366 /* AsyncPostManagerTests.m */,
+			);
+			name = async;
+			sourceTree = "<group>";
+		};
+		AF584871173A351B009F1366 /* PersistenceQueue */ = {
+			isa = PBXGroup;
+			children = (
+				AF584872173A3568009F1366 /* PersistenceQueue.h */,
+				AF584873173A3568009F1366 /* PersistenceQueue.m */,
+			);
+			name = PersistenceQueue;
 			sourceTree = "<group>";
 		};
 		AFAA44D71737B8B100C5A844 /* REComposeViewController */ = {
@@ -347,6 +386,8 @@
 				AFAA44E51737B8BE00C5A844 /* DEComposeRuledView.m in Sources */,
 				AFAA44E61737B8BE00C5A844 /* DEComposeTextView.m in Sources */,
 				AFAA44E71737B8BE00C5A844 /* REComposeBackgroundView.m in Sources */,
+				AF58486B173A3337009F1366 /* AsyncPostManager.m in Sources */,
+				AF584874173A3568009F1366 /* PersistenceQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF30E319173749E400DF673A /* CocoastoryTests.m in Sources */,
+				AF58486F173A334A009F1366 /* AsyncPostManagerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
