@@ -318,19 +318,18 @@
         NSLog(@"This device has a camera, ask the what they want to do.");
         UIActionSheet *photoSourceSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
                                                              cancelButtonTitle:@"취소" destructiveButtonTitle:nil
-                                                             otherButtonTitles:@"사진 찍기", @"기존 항목에서 선택", nil, nil];
+                                                             otherButtonTitles:@"사진 찍기", @"포토 라이브러리", nil];
         photoSourceSheet.backgroundColor = [UIColor redColor];
         [photoSourceSheet showInView:self.view];
     }
-    else { // No camera, probably a touch
-        NSLog(@"No camera, probably a touch");
+    else {
+        // No camera, probably a touch
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
         picker.delegate = self;
-        picker.allowsEditing = NO;
-        [self presentModalViewController:picker animated:YES];
+        picker.allowsEditing = YES;
+        [self presentViewController:picker animated:YES completion:nil];
     }
-
 }
 
 - (void) imagePickerController: (UIImagePickerController *)picker didFinishPickingImage: (UIImage *)image
@@ -342,5 +341,24 @@
     [self setAttachmentImage:image];
 	[picker dismissModalViewControllerAnimated:YES];
     
+}
+
+#pragma mark -
+#pragma mark UIActionSheetDelegate
+- (void) actionSheet: (UIActionSheet *)actionSheet didDismissWithButtonIndex: (NSInteger)buttonIndex {
+	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+	picker.delegate = self;
+	picker.allowsEditing = YES;
+	
+	switch (buttonIndex) {
+		case 0:
+			picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+			break;
+		case 1:
+			picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+			break;
+	}
+    
+    [self presentViewController:picker animated:YES completion:nil];
 }
 @end

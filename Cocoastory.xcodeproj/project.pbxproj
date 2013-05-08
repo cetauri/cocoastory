@@ -211,16 +211,16 @@
 		AFAA44D71737B8B100C5A844 /* REComposeViewController */ = {
 			isa = PBXGroup;
 			children = (
-				AFAA44D81737B8BE00C5A844 /* REComposeViewController.m */,
 				AFAA44D91737B8BE00C5A844 /* REComposeViewController.h */,
-				AFAA44DA1737B8BE00C5A844 /* REComposeSheetView.m */,
-				AFAA44DB1737B8BE00C5A844 /* DEComposeRuledView.h */,
-				AFAA44DC1737B8BE00C5A844 /* DEComposeRuledView.m */,
+				AFAA44D81737B8BE00C5A844 /* REComposeViewController.m */,
 				AFAA44DD1737B8BE00C5A844 /* DEComposeTextView.h */,
 				AFAA44DE1737B8BE00C5A844 /* DEComposeTextView.m */,
+				AFAA44DB1737B8BE00C5A844 /* DEComposeRuledView.h */,
+				AFAA44DC1737B8BE00C5A844 /* DEComposeRuledView.m */,
 				AFAA44DF1737B8BE00C5A844 /* REComposeBackgroundView.h */,
 				AFAA44E01737B8BE00C5A844 /* REComposeBackgroundView.m */,
 				AFAA44E11737B8BE00C5A844 /* REComposeSheetView.h */,
+				AFAA44DA1737B8BE00C5A844 /* REComposeSheetView.m */,
 				AFAA44E21737B8BE00C5A844 /* REComposeViewController.bundle */,
 			);
 			name = REComposeViewController;
@@ -455,6 +455,8 @@
 		AF30E31D173749E400DF673A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Song Hyunkwan (DT4HZ9X63Q)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Song Hyunkwan (DT4HZ9X63Q)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -468,6 +470,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Cocoastory;
+				PROVISIONING_PROFILE = "661D0CE1-A910-48B5-BC74-8AFB67F18C09";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B4CC4BA5-55B2-4CEF-8EF6-30010D9633D1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -475,6 +479,8 @@
 		AF30E31E173749E400DF673A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Song Hyunkwan (DT4HZ9X63Q)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Song Hyunkwan (DT4HZ9X63Q)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -488,6 +494,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Cocoastory;
+				PROVISIONING_PROFILE = "661D0CE1-A910-48B5-BC74-8AFB67F18C09";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "661D0CE1-A910-48B5-BC74-8AFB67F18C09";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
