@@ -51,11 +51,19 @@
             file.filename = @"image.png";
             [file fileUploadInBackground:^(BaasioFile *file) {
                 BaasioEntity *timelineEntity = [BaasioEntity entitytWithName:@"timeline"];
+                [timelineEntity setObject:composeViewController.text forKey:@"text"];
+                [timelineEntity setObject:file.uuid forKey:@"file"];
+                
+                // USER
+                BaasioUser *user = [BaasioUser currentUser];
+                [timelineEntity setObject:user.uuid forKey:@"user"];
+                [timelineEntity setObject:user.username forKey:@"username"];
+
+                // Location
                 if (composeViewController.locDictionary != nil){
                     [timelineEntity setObject:composeViewController.locDictionary forKey:@"location"];
                 }
-                [timelineEntity setObject:composeViewController.text forKey:@"text"];
-                [timelineEntity setObject:file.uuid forKey:@"file"];
+                
                 [timelineEntity saveInBackground:^(BaasioEntity *entity) {
                     [self.view setUserInteractionEnabled:YES];
                     [composeViewController dismissViewControllerAnimated:YES completion:nil];
