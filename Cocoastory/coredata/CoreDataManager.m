@@ -42,7 +42,7 @@ static CoreDataManager *_manager;
     return self;
 }
 
-- (void)insert:(BaasioEntity *)entity
+- (void) insert:(BaasioEntity *)entity
     entityName:(NSString *)entityName{
 
     [context lock];
@@ -87,35 +87,7 @@ static CoreDataManager *_manager;
     }
 }
 
-- (void)deletePostWithLocalID:(NSString*)localID{
-
-    NSString *entityName = @"PlazaFeed";
-
-    [context lock];
-
-    NSError *error;
-    @autoreleasepool {
-
-        //delete
-        NSFetchRequest *request = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:context];
-        [request setEntity:entityDescription];
-
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"localID == %@", localID];
-        [request setPredicate:predicate];
-
-        NSArray *array = [context executeFetchRequest:request error:&error];
-        NSErrorLog(error);
-
-        for (NSManagedObject *object in array){
-            [context deleteObject:object];
-        }
-    }
-    [context save:&error];
-    [context unlock];
-}
-
-- (void)deleteTimeline:(NSString *)uuid{
+- (void) delete:(NSString *)uuid{
     NSString *entityName = @"PlazaFeed";
 
     [context lock];
@@ -165,7 +137,7 @@ static CoreDataManager *_manager;
     [context unlock];
 }
 
-- (void)editPost:(NSString *)uuid
+- (void) editPost:(NSString *)uuid
           entity:(BaasioEntity *)entity
       entityName:(NSString*)entityName {
 

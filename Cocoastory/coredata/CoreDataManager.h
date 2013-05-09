@@ -15,7 +15,7 @@
 - (void) inserts:(NSArray *)entities
      entityName:(NSString*)entityName;
 
-- (void) deleteTimeline:(NSString *)uuid;
+- (void) delete:(NSString *)uuid;
 - (void) deleteWithName:(NSString *)entityName;
 
 - (void) editPost:(NSString *)uuid
