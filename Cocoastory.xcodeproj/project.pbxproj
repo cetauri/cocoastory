@@ -39,6 +39,9 @@
 		AF974AB1173B876E00B61517 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF974AB0173B876E00B61517 /* libsqlite3.0.dylib */; };
 		AF974AB4173B898C00B61517 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF974AB2173B898C00B61517 /* Model.xcdatamodeld */; };
 		AF974AB9173B8E4700B61517 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF974AB8173B8E4700B61517 /* CoreDataManager.m */; };
+		AF974ABC173BAAD500B61517 /* CoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF974ABB173BAAD500B61517 /* CoreDataTests.m */; };
+		AF974ABD173BAD5300B61517 /* baas.io.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAA44D51737B88800C5A844 /* baas.io.framework */; };
+		AF974ABE173BAEC800B61517 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2EA05AD9A8C557AEE9BFF /* CoreData.framework */; };
 		AFAA44D61737B88800C5A844 /* baas.io.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAA44D51737B88800C5A844 /* baas.io.framework */; };
 		AFAA44E31737B8BE00C5A844 /* REComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAA44D81737B8BE00C5A844 /* REComposeViewController.m */; };
 		AFAA44E41737B8BE00C5A844 /* REComposeSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAA44DA1737B8BE00C5A844 /* REComposeSheetView.m */; };
@@ -102,6 +105,8 @@
 		AF974AB3173B898C00B61517 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		AF974AB7173B8E4700B61517 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataManager.h; path = coredata/CoreDataManager.h; sourceTree = "<group>"; };
 		AF974AB8173B8E4700B61517 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataManager.m; path = coredata/CoreDataManager.m; sourceTree = "<group>"; };
+		AF974ABA173BAAD500B61517 /* CoreDataTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTests.h; sourceTree = "<group>"; };
+		AF974ABB173BAAD500B61517 /* CoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTests.m; sourceTree = "<group>"; };
 		AFAA44D51737B88800C5A844 /* baas.io.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = baas.io.framework; path = Library/baas.io.framework; sourceTree = "<group>"; };
 		AFAA44D81737B8BE00C5A844 /* REComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REComposeViewController.m; path = Library/REComposeViewController/REComposeViewController.m; sourceTree = "<group>"; };
 		AFAA44D91737B8BE00C5A844 /* REComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REComposeViewController.h; path = Library/REComposeViewController/REComposeViewController.h; sourceTree = "<group>"; };
@@ -140,6 +145,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF974ABE173BAEC800B61517 /* CoreData.framework in Frameworks */,
+				AF974ABD173BAD5300B61517 /* baas.io.framework in Frameworks */,
 				AF30E30C173749E400DF673A /* SenTestingKit.framework in Frameworks */,
 				AF30E30D173749E400DF673A /* UIKit.framework in Frameworks */,
 				AF30E30E173749E400DF673A /* Foundation.framework in Frameworks */,
@@ -149,6 +156,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27F2E9DB50074C268CDD2A57 /* coreData */ = {
+			isa = PBXGroup;
+			children = (
+				AF974ABA173BAAD500B61517 /* CoreDataTests.h */,
+				AF974ABB173BAAD500B61517 /* CoreDataTests.m */,
+			);
+			path = coreData;
+			sourceTree = "<group>";
+		};
 		27F2EE323D7267B913E3134B /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +251,7 @@
 				AF30E317173749E400DF673A /* CocoastoryTests.h */,
 				AF30E318173749E400DF673A /* CocoastoryTests.m */,
 				AF30E312173749E400DF673A /* Supporting Files */,
+				27F2E9DB50074C268CDD2A57 /* coreData */,
 			);
 			path = CocoastoryTests;
 			sourceTree = "<group>";
@@ -457,6 +474,7 @@
 			files = (
 				AF30E319173749E400DF673A /* CocoastoryTests.m in Sources */,
 				AF58486F173A334A009F1366 /* AsyncPostManagerTests.m in Sources */,
+				AF974ABC173BAAD500B61517 /* CoreDataTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +627,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/Library\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cocoastory/Cocoastory-Prefix.pch";
@@ -626,6 +645,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/Library\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cocoastory/Cocoastory-Prefix.pch";

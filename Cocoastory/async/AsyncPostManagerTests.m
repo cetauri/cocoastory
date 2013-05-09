@@ -8,7 +8,7 @@
 
 #import "AsyncPostManagerTests.h"
 #import "AsyncPostManager.h"
-#import "TestSemaphor.h"
+//#import "TestSemaphor.h"
 
 @implementation AsyncPostManagerTests
 
