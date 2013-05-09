@@ -78,9 +78,7 @@
     }
     return self;
 }
-- (void)attachmentImageTouch:(id)sender{
-    NSLog(@"aaa : sss");
-}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];

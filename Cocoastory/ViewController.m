@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <baas.io/Baas.h>
 
 @interface ViewController ()
 
@@ -36,14 +37,49 @@
 
 - (void)composeViewController:(REComposeViewController *)composeViewController didFinishWithResult:(REComposeResult)result
 {
-    [composeViewController dismissViewControllerAnimated:YES completion:nil];
     
-    if (result == REComposeResultCancelled) {
-        NSLog(@"Cancelled");
+    switch (result) {
+        case REComposeResultCancelled:
+            NSLog(@"Cancelled");
+            break;
+            
+        default:{
+            [self.view setUserInteractionEnabled:NO];
+            
+            BaasioFile *file = [[BaasioFile alloc] init];
+            file.data = UIImageJPEGRepresentation(composeViewController.attachmentImage, 1.0);;
+            file.filename = @"image.png";
+            [file fileUploadInBackground:^(BaasioFile *file) {
+                BaasioEntity *timelineEntity = [BaasioEntity entitytWithName:@"timeline"];
+                if (composeViewController.locDictionary != nil){
+                    [timelineEntity setObject:composeViewController.locDictionary forKey:@"location"];
+                }
+                [timelineEntity setObject:composeViewController.text forKey:@"text"];
+                [timelineEntity setObject:file.uuid forKey:@"file"];
+                [timelineEntity saveInBackground:^(BaasioEntity *entity) {
+                    [self.view setUserInteractionEnabled:YES];
+                    [composeViewController dismissViewControllerAnimated:YES completion:nil];
+                } failureBlock:^(NSError *error) {
+                    [self errorHandler:error];
+                }];
+            }
+            failureBlock:^(NSError *error) {
+                [self errorHandler:error];
+            }
+            progressBlock:^(float progress) {
+                NSLog(@"progress : %f", progress);
+            }];
+        }
     }
-    
-    if (result == REComposeResultPosted) {
-        NSLog(@"Text: %@", composeViewController.text);
-    }
+}
+
+- (void)errorHandler:(NSError *)error {
+    [self.view setUserInteractionEnabled:YES];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:error.localizedDescription
+                                                                message:nil
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+    [alertView show];
 }
 @end

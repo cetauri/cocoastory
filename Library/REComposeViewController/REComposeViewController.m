@@ -26,7 +26,9 @@
 #import "REComposeViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface REComposeViewController ()
+@interface REComposeViewController ()    {
+    CLLocationManager *locationManager;
+}
 
 @property (strong, readonly, nonatomic) REComposeBackgroundView *backgroundView;
 @property (strong, readonly, nonatomic) UIView *containerView;
@@ -54,6 +56,11 @@
 
 - (void)loadView
 {
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.delegate = self;
+
     UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
     self.view = [[UIView alloc] initWithFrame:rootViewController.view.bounds];
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -106,7 +113,15 @@
                                     _sheetView.attachmentImageView.frame.size.height);
     [attachButton addTarget:self action:@selector(attachmentImageTouch:) forControlEvents:UIControlEventTouchUpInside];
     [_containerView addSubview:attachButton];
-    
+
+
+    UIImage *pinImage = [UIImage imageNamed:@"pin.png"];
+    _pinButton = [[UIButton alloc] init];
+    [_pinButton setImage:pinImage forState:UIControlStateNormal];
+    _pinButton.frame = CGRectMake(_backView.frame.size.width - 40, _backView.frame.size.height - 35, 30, 30);
+    [_pinButton addTarget:self action:@selector(pinImageTouch:) forControlEvents:UIControlEventTouchUpInside];
+    [_containerView addSubview:_pinButton];
+
 }
 
 - (void)didMoveToParentViewController:(UIViewController *)parent
@@ -307,6 +322,27 @@
 - (void)viewOrientationDidChanged:(NSNotification *)notification
 {
     [self layoutWithOrientation:self.interfaceOrientation width:self.view.frame.size.width height:self.view.frame.size.height];
+}
+
+#pragma mark -
+#pragma mark pin
+- (void)pinImageTouch:(id)sender{
+    [locationManager startUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"작업 실패"
+                                                    message:@"설정 - 일반 - 위치서비스에서 작업을 허용해주세요."
+                                                   delegate:nil cancelButtonTitle:@"확인" otherButtonTitles:nil];
+    [alert show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation {
+    [manager stopUpdatingLocation];
+
+    _locDictionary = @{@"latitude":[NSString stringWithFormat:@"%g", newLocation.coordinate.latitude],
+                       @"longitude":[NSString stringWithFormat:@"%g", newLocation.coordinate.longitude]};
 }
 
 

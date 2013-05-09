@@ -23,6 +23,7 @@
 // THE SOFTWARE.
 //
 
+#import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
 #import "REComposeSheetView.h"
 #import "REComposeBackgroundView.h"
@@ -38,12 +39,13 @@ typedef void (^REComposeViewControllerCompletionHandler)(REComposeViewController
 
 @protocol REComposeViewControllerDelegate;
 
-@interface REComposeViewController : UIViewController <REComposeSheetViewDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
+@interface REComposeViewController : UIViewController <REComposeSheetViewDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate> {
     REComposeSheetView *_sheetView;
     REComposeBackgroundView *_backgroundView;
     UIView *_backView;
     UIView *_containerView;
     UIImageView *_paperclipView;
+    UIButton *_pinButton;
 }
 
 @property (copy, readwrite, nonatomic) REComposeViewControllerCompletionHandler completionHandler;
@@ -55,6 +57,8 @@ typedef void (^REComposeViewControllerCompletionHandler)(REComposeViewController
 @property (strong, readonly, nonatomic) UINavigationItem *navigationItem;
 @property (strong, readwrite, nonatomic) UIImage *attachmentImage;
 @property (weak, readonly, nonatomic) UIViewController *rootViewController;
+@property (strong, readwrite, nonatomic) NSDictionary * locDictionary;
+
 
 - (void)presentFromRootViewController;
 - (void)presentFromViewController:(UIViewController *)controller;
