@@ -11,5 +11,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+    #import <baas.io/Baas.h>
 #endif
 #define APP_LOGIN_FINISH_NOTIFICATION   @"appLoginFinishNotification"

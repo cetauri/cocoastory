@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import <baas.io/Baas.h>
 
 @interface ViewController ()
 
@@ -29,8 +28,6 @@
     composeViewController.text = @"Test";
     [composeViewController presentFromRootViewController];
 }
-
-
 
 #pragma mark -
 #pragma mark REComposeViewControllerDelegate

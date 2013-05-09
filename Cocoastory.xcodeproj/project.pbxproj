@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27F2E1F13894779E46C52EEF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2EC75BE06E030EDFF7991 /* CoreLocation.framework */; };
+		27F2E44C61C3BA48F439C01D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2EBF25A9C4D9C899D26B8 /* libxml2.dylib */; };
+		27F2E9145F33422C7AA297F0 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2EED0D92C85531218DD23 /* libz.dylib */; };
+		27F2EE191668CBE2F78DD6CA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2EA05AD9A8C557AEE9BFF /* CoreData.framework */; };
 		27F2EFB27A6D97129A4B8427 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 27F2E1C2038E2BFFE7681459 /* pin.png */; };
 		27F2EFF9BA21DAA76854DEBD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2EC75BE06E030EDFF7991 /* CoreLocation.framework */; };
 		AF30E2E8173749E400DF673A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF30E2E7173749E400DF673A /* UIKit.framework */; };
@@ -32,6 +36,9 @@
 		AF58486B173A3337009F1366 /* AsyncPostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF58486A173A3337009F1366 /* AsyncPostManager.m */; };
 		AF58486F173A334A009F1366 /* AsyncPostManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF58486E173A334A009F1366 /* AsyncPostManagerTests.m */; };
 		AF584874173A3568009F1366 /* PersistenceQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AF584873173A3568009F1366 /* PersistenceQueue.m */; };
+		AF974AB1173B876E00B61517 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF974AB0173B876E00B61517 /* libsqlite3.0.dylib */; };
+		AF974AB4173B898C00B61517 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF974AB2173B898C00B61517 /* Model.xcdatamodeld */; };
+		AF974AB9173B8E4700B61517 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF974AB8173B8E4700B61517 /* CoreDataManager.m */; };
 		AFAA44D61737B88800C5A844 /* baas.io.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAA44D51737B88800C5A844 /* baas.io.framework */; };
 		AFAA44E31737B8BE00C5A844 /* REComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAA44D81737B8BE00C5A844 /* REComposeViewController.m */; };
 		AFAA44E41737B8BE00C5A844 /* REComposeSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAA44DA1737B8BE00C5A844 /* REComposeSheetView.m */; };
@@ -53,7 +60,10 @@
 
 /* Begin PBXFileReference section */
 		27F2E1C2038E2BFFE7681459 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		27F2EA05AD9A8C557AEE9BFF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		27F2EBF25A9C4D9C899D26B8 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		27F2EC75BE06E030EDFF7991 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		27F2EED0D92C85531218DD23 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AF30E2E4173749E400DF673A /* Cocoastory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocoastory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF30E2E7173749E400DF673A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AF30E2E9173749E400DF673A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -88,6 +98,10 @@
 		AF58486E173A334A009F1366 /* AsyncPostManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncPostManagerTests.m; path = Cocoastory/async/AsyncPostManagerTests.m; sourceTree = SOURCE_ROOT; };
 		AF584872173A3568009F1366 /* PersistenceQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersistenceQueue.h; path = async/PersistenceQueue/PersistenceQueue.h; sourceTree = "<group>"; };
 		AF584873173A3568009F1366 /* PersistenceQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersistenceQueue.m; path = async/PersistenceQueue/PersistenceQueue.m; sourceTree = "<group>"; };
+		AF974AB0173B876E00B61517 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		AF974AB3173B898C00B61517 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		AF974AB7173B8E4700B61517 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataManager.h; path = coredata/CoreDataManager.h; sourceTree = "<group>"; };
+		AF974AB8173B8E4700B61517 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataManager.m; path = coredata/CoreDataManager.m; sourceTree = "<group>"; };
 		AFAA44D51737B88800C5A844 /* baas.io.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = baas.io.framework; path = Library/baas.io.framework; sourceTree = "<group>"; };
 		AFAA44D81737B8BE00C5A844 /* REComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = REComposeViewController.m; path = Library/REComposeViewController/REComposeViewController.m; sourceTree = "<group>"; };
 		AFAA44D91737B8BE00C5A844 /* REComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REComposeViewController.h; path = Library/REComposeViewController/REComposeViewController.h; sourceTree = "<group>"; };
@@ -107,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF974AB1173B876E00B61517 /* libsqlite3.0.dylib in Frameworks */,
 				AFAA44D61737B88800C5A844 /* baas.io.framework in Frameworks */,
 				AF30E32717374C6A00DF673A /* MobileCoreServices.framework in Frameworks */,
 				AF30E32517374C2700DF673A /* SystemConfiguration.framework in Frameworks */,
@@ -114,6 +129,10 @@
 				AF30E2EA173749E400DF673A /* Foundation.framework in Frameworks */,
 				AF30E2EC173749E400DF673A /* CoreGraphics.framework in Frameworks */,
 				27F2EFF9BA21DAA76854DEBD /* CoreLocation.framework in Frameworks */,
+				27F2EE191668CBE2F78DD6CA /* CoreData.framework in Frameworks */,
+				27F2E44C61C3BA48F439C01D /* libxml2.dylib in Frameworks */,
+				27F2E9145F33422C7AA297F0 /* libz.dylib in Frameworks */,
+				27F2E1F13894779E46C52EEF /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +180,9 @@
 		AF30E2E6173749E400DF673A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27F2EBF25A9C4D9C899D26B8 /* libxml2.dylib */,
+				27F2EED0D92C85531218DD23 /* libz.dylib */,
+				AF974AB0173B876E00B61517 /* libsqlite3.0.dylib */,
 				AFAA44D51737B88800C5A844 /* baas.io.framework */,
 				AF30E32617374C6A00DF673A /* MobileCoreServices.framework */,
 				AF30E32417374C2700DF673A /* SystemConfiguration.framework */,
@@ -169,6 +191,7 @@
 				AF30E2EB173749E400DF673A /* CoreGraphics.framework */,
 				AF30E30B173749E400DF673A /* SenTestingKit.framework */,
 				27F2EC75BE06E030EDFF7991 /* CoreLocation.framework */,
+				27F2EA05AD9A8C557AEE9BFF /* CoreData.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,6 +199,8 @@
 		AF30E2ED173749E400DF673A /* Cocoastory */ = {
 			isa = PBXGroup;
 			children = (
+				AF974AB6173B8E0A00B61517 /* coredata */,
+				AF974AB5173B8D1900B61517 /* timeline */,
 				AF584868173A332C009F1366 /* async */,
 				AF30E329173769C100DF673A /* login */,
 				AF30E2F6173749E400DF673A /* AppDelegate.h */,
@@ -260,6 +285,23 @@
 				AF584873173A3568009F1366 /* PersistenceQueue.m */,
 			);
 			name = PersistenceQueue;
+			sourceTree = "<group>";
+		};
+		AF974AB5173B8D1900B61517 /* timeline */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = timeline;
+			sourceTree = "<group>";
+		};
+		AF974AB6173B8E0A00B61517 /* coredata */ = {
+			isa = PBXGroup;
+			children = (
+				AF974AB7173B8E4700B61517 /* CoreDataManager.h */,
+				AF974AB8173B8E4700B61517 /* CoreDataManager.m */,
+				AF974AB2173B898C00B61517 /* Model.xcdatamodeld */,
+			);
+			name = coredata;
 			sourceTree = "<group>";
 		};
 		AFAA44D71737B8B100C5A844 /* REComposeViewController */ = {
@@ -404,6 +446,8 @@
 				AFAA44E71737B8BE00C5A844 /* REComposeBackgroundView.m in Sources */,
 				AF58486B173A3337009F1366 /* AsyncPostManager.m in Sources */,
 				AF584874173A3568009F1366 /* PersistenceQueue.m in Sources */,
+				AF974AB4173B898C00B61517 /* Model.xcdatamodeld in Sources */,
+				AF974AB9173B8E4700B61517 /* CoreDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +667,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AF974AB2173B898C00B61517 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AF974AB3173B898C00B61517 /* Model.xcdatamodel */,
+			);
+			currentVersion = AF974AB3173B898C00B61517 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = ../Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AF30E2DC173749E300DF673A /* Project object */;
 }
