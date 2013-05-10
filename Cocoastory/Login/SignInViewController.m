@@ -174,7 +174,8 @@
         }
         
         field.placeholder = @"필수 입력 항목";
-        
+        field.text = @"cetauri";
+
         [loginCell addSubview:field ];
     }
     
@@ -189,7 +190,7 @@
             label.text = @"암호";
             break;
     }
-    
+
     return loginCell;
 }
 

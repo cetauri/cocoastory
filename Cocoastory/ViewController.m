@@ -34,10 +34,10 @@
 
 - (void)composeViewController:(REComposeViewController *)composeViewController didFinishWithResult:(REComposeResult)result
 {
-    
     switch (result) {
         case REComposeResultCancelled:
             NSLog(@"Cancelled");
+            [composeViewController dismissViewControllerAnimated:YES completion:nil];
             break;
             
         default:{

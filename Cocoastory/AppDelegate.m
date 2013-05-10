@@ -11,6 +11,9 @@
 
 #import "ViewController.h"
 #import "SignInViewController.h"
+#import "FirstViewController.h"
+#import "ThirdViewController.h"
+#import "SecondViewController.h"
 @implementation AppDelegate
 
 @synthesize managedObjectContext = __managedObjectContext;
@@ -45,29 +48,24 @@
 {
     
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
-    
+    ViewController *viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+
 //    BoxListViewController *boxListViewController = [[BoxListViewController alloc] init];
 //    UIViewController *viewController1 = [[UINavigationController alloc] initWithRootViewController:boxListViewController];
 //    
-//    DownloadViewController *downloadViewController = [[DownloadViewController alloc] init];
-//    UIViewController *viewController2 = [[UINavigationController alloc] initWithRootViewController:downloadViewController];
-//    
-//    UploadViewController *uploadViewController = [[UploadViewController alloc] init];
-//    UIViewController *viewController3 = [[UINavigationController alloc] initWithRootViewController:uploadViewController];
-//    
-//    SettingViewController *settingViewController = [[SettingViewController alloc] init];
-//    UIViewController *viewController4 = [[UINavigationController alloc] initWithRootViewController:settingViewController];
-//    
-//    
-//    self.tabBarController = [[UITabBarController alloc] init];
-//    self.tabBarController.viewControllers = @[viewController1, viewController2, viewController3, viewController4];
-//    self.window.rootViewController = self.tabBarController;
-    
+    FirstViewController *downloadViewController = [[FirstViewController alloc] init];
+    UIViewController *viewController2 = [[UINavigationController alloc] initWithRootViewController:downloadViewController];
+
+    SecondViewController *uploadViewController = [[SecondViewController alloc] init];
+    UIViewController *viewController3 = [[UINavigationController alloc] initWithRootViewController:uploadViewController];
+
+    ThirdViewController *settingViewController = [[ThirdViewController alloc] init];
+    UIViewController *viewController4 = [[UINavigationController alloc] initWithRootViewController:settingViewController];
+
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = @[viewController, viewController2, viewController3, viewController4];
+    self.window.rootViewController = self.tabBarController;
 }
-
-
 
 - (void)saveContext
 {

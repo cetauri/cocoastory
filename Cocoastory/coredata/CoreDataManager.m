@@ -45,6 +45,13 @@ static CoreDataManager *_manager;
 - (void) insert:(BaasioEntity *)entity
     entityName:(NSString *)entityName{
 
+//    if ([NSStringFromClass([entity class]) isEqualToString:@"__NSCFDictionary"]){
+
+    if ([entity isKindOfClass:[NSDictionary class]]){
+        BaasioEntity *_entity = [[BaasioEntity alloc] init];
+        [_entity set:(NSDictionary *)entity];
+        entity = _entity;
+    }
     [context lock];
 
     NSError *error;
@@ -61,19 +68,36 @@ static CoreDataManager *_manager;
     NSArray *array = [context executeFetchRequest:request error:&error];
     NSErrorLog(error);
 
-    for (NSManagedObject *object in array){
-        [context deleteObject:object];
+    BOOL willSave = false;
+    NSString *modified = [NSString stringWithFormat:@"%i", entity.modified];
+    // TODO : XXXX  문제 있음
+//    NSLog(@"modified  : %@", entity.dictionary);
+    if(array.count == 0){
+        willSave = true;
+    } else{
+        for (NSManagedObject *object in array){
+            if ([modified isEqualToString:[object valueForKey:@"modified"]]){
+                //skip
+            } else{
+                [context deleteObject:object];
+//                NSLog(@"deleteObject, %i, %@", modified, object.description);
+                willSave = true;
+            }
+        }
     }
 
-    //insert
-    NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:entityName
-                                                                inManagedObjectContext:context];
-    [managedObject setValue:entity.uuid forKey:@"uuid"];
-    [managedObject setValue:entity.modified forKey:@"modified"];
-    [managedObject setValue:entity.dictionary forKey:@"object"];
+    if (willSave){
+        //insert
+        NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:entityName
+                                                                       inManagedObjectContext:context];
+//        NSLog(@"saved entity.modified : %i\n\n", entity.modified);
+        [managedObject setValue:entity.uuid forKey:@"uuid"];
+        [managedObject setValue:modified forKey:@"modified"];
+        [managedObject setValue:entity.dictionary forKey:@"object"];
 
-    [context save:&error];
-    NSErrorLog(error);
+        [context save:&error];
+        NSErrorLog(error);
+    }
 
     [context unlock];
 }

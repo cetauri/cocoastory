@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		27F2E1F13894779E46C52EEF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2EC75BE06E030EDFF7991 /* CoreLocation.framework */; };
+		27F2E2DA3CD52A2CD0D24E94 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F2EC9C02F610A5209A577B /* ThirdViewController.m */; };
 		27F2E44C61C3BA48F439C01D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2EBF25A9C4D9C899D26B8 /* libxml2.dylib */; };
 		27F2E9145F33422C7AA297F0 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2EED0D92C85531218DD23 /* libz.dylib */; };
+		27F2E9E3FB6B507E6176F975 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F2E54D59376977A004C6FE /* FirstViewController.m */; };
+		27F2ED962ECB6B5746C0AC56 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F2EAA7E2B888AB8DA7ACB3 /* SecondViewController.m */; };
 		27F2EE191668CBE2F78DD6CA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2EA05AD9A8C557AEE9BFF /* CoreData.framework */; };
 		27F2EFB27A6D97129A4B8427 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 27F2E1C2038E2BFFE7681459 /* pin.png */; };
 		27F2EFF9BA21DAA76854DEBD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2EC75BE06E030EDFF7991 /* CoreLocation.framework */; };
@@ -62,10 +65,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27F2E0E28C30ABA59551D601 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		27F2E1C2038E2BFFE7681459 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		27F2E30B766478FAAF6D3F9F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		27F2E54D59376977A004C6FE /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		27F2E6179FD151D559819F85 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		27F2EA05AD9A8C557AEE9BFF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		27F2EAA7E2B888AB8DA7ACB3 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		27F2EBF25A9C4D9C899D26B8 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		27F2EC75BE06E030EDFF7991 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		27F2EC9C02F610A5209A577B /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		27F2EED0D92C85531218DD23 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AF30E2E4173749E400DF673A /* Cocoastory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocoastory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF30E2E7173749E400DF673A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -226,6 +235,12 @@
 				AF30E302173749E400DF673A /* ViewController.xib */,
 				AF30E2EE173749E400DF673A /* Supporting Files */,
 				27F2EE323D7267B913E3134B /* images */,
+				27F2E54D59376977A004C6FE /* FirstViewController.m */,
+				27F2E6179FD151D559819F85 /* FirstViewController.h */,
+				27F2EC9C02F610A5209A577B /* ThirdViewController.m */,
+				27F2E0E28C30ABA59551D601 /* ThirdViewController.h */,
+				27F2EAA7E2B888AB8DA7ACB3 /* SecondViewController.m */,
+				27F2E30B766478FAAF6D3F9F /* SecondViewController.h */,
 			);
 			path = Cocoastory;
 			sourceTree = "<group>";
@@ -465,6 +480,9 @@
 				AF584874173A3568009F1366 /* PersistenceQueue.m in Sources */,
 				AF974AB4173B898C00B61517 /* Model.xcdatamodeld in Sources */,
 				AF974AB9173B8E4700B61517 /* CoreDataManager.m in Sources */,
+				27F2E9E3FB6B507E6176F975 /* FirstViewController.m in Sources */,
+				27F2E2DA3CD52A2CD0D24E94 /* ThirdViewController.m in Sources */,
+				27F2ED962ECB6B5746C0AC56 /* SecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
