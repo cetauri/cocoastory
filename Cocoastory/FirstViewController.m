@@ -7,7 +7,7 @@
 #import "FirstViewController.h"
 #import "AppDelegate.h"
 #import "CoreDataManager.h"
-
+//#import <baas.io/Baas.h>
 @implementation FirstViewController {
 
     NSFetchedResultsController *fetchedResultsController;
@@ -160,22 +160,9 @@
         listCell.detailTextLabel.text = entity[@"username"];
     }
     
-    NSString *imagePath = [NSString stringWithFormat:@"https://blob.baas.io/cetauri/cocoastory/files/%@", entity[@"file"]];
-    NSURL *imageURL = [NSURL URLWithString:imagePath];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:imageURL];
-//    [request setValue:@"image/jpeg" forHTTPHeaderField:@"Content-Type"];
-    [listCell.imageView imageWithURLRequest:request
-                           placeholderImage:[UIImage imageNamed:@""]
-                                    success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
-                                    }
-                                    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error){
-                                        NSLog(@"error : (%i, %i) %@", response.statusCode, error.code, error.localizedDescription);
-        
-                                     }];
-    
-    
-
+    [listCell.imageView imageWithBaasioFile:entity[@"file"]
+                           placeholderImage:[UIImage imageNamed:@"pin.png"]];
     return listCell;
 }
 
