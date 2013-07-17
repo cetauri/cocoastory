@@ -160,8 +160,9 @@
         listCell.detailTextLabel.text = entity[@"username"];
     }
     
-    
-    [listCell.imageView imageWithBaasioFile:entity[@"file"]
+    BaasioFile *file = [[BaasioFile alloc]init];
+    file.uuid = entity[@"file"];
+    [listCell.imageView imageWithBaasioFile:file
                            placeholderImage:[UIImage imageNamed:@"pin.png"]];
     return listCell;
 }
